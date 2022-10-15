@@ -1,0 +1,58 @@
+//Task 3
+
+import java.util.*;
+class BankAccount
+{
+    int account_number,balance,Amount;
+    String account_holder,account_type;
+    
+    Scanner sc=new Scanner(System.in);
+
+    void getData()
+    {
+        System.out.println("enter your name");
+        account_holder=sc.nextLine();
+        System.out.println("enter your account number");
+        account_number=sc.nextInt();
+        System.out.println("enter type of account");
+        account_type=sc.next();
+        System.out.println("enter your current balance");
+        balance=sc.nextInt();
+
+    }
+    void withdraw()
+{
+System.out.println("enter Amount you want to withdraw");
+Amount=sc.nextInt();
+if(balance<Amount)
+System.out.println("cant't withdraw amount due to low balance in your account");
+else
+balance=balance-Amount;
+System.out.println("your balance after withdraw "+balance);
+}
+void transactionsHistory()
+{
+System.out.println("Account holder name is " +account_holder);
+
+System.out.println(" Current Balance in your account is " +balance);
+}
+void deposit()
+{
+    System.out.println("enter Amount you want to cteadit");
+    Amount=sc.nextInt();
+    balance=balance+Amount;
+    System.out.println("your balance after creadited "+balance);
+}
+}
+class AccountData
+{
+public static void main(String arg[])
+{
+BankAccount a=new BankAccount();
+a.getData();
+ a.withdraw();
+a.deposit();
+a.transactionsHistory();
+
+}
+}
